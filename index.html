@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="">
+    <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="./styles.css">
+            <title>Documentação Flexbox Ford Enter</title>
+        </head>
+  <style type="text/css">
+    BODY {
+      font-family: helvetica, sans-serif;
+    }
+    .flexbox {
+      display: flex;
+    }
+    .flexbox-inline {
+      display: inline-flex;
+      width: 25rem;
+      padding: 1rem;
+    }
+    .box {
+      width: 10rem;
+      padding: 1rem;
+    }
+    .box-lg {
+      width: 20rem;
+      padding: 1rem;
+    }
+    .fixed-box {
+      width: 10rem;
+      height: 10rem;
+    }
+    .box-container {
+      background-color: #12122d;
+      color: #4955f9;
+    }
+    .fixed-height {
+      height: 50rem;
+    }
+    .flex-direction-row {
+      flex-direction: row;
+    }
+    .flex-direction-row-reverse {
+      flex-direction: row-reverse;
+    }
+    .flex-direction-column {
+      flex-direction: column;
+    }
+    .flex-direction-column-reverse {
+      flex-direction: column-reverse;
+    }
+    .flex-wrap-nowrap {
+      flex-wrap: nowrap;
+    }
+    .flex-wrap-wrap {
+      flex-wrap: wrap;
+    }
+    .flex-wrap-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+    .flex-flow-row-nowrap {
+      flex-flow: row nowrap;
+    }
+    .flex-flow-column-wrap {
+      flex-flow: column wrap;
+    }
+    .box-1 {
+      background-color: #c8fefb;
+      color: #47c9fc;
+    }
+    .box-2 {
+      background-color: #518dfd;
+      color: #fff;
+    }
+    .box-3 {
+      background-color: #4576fc;
+      color: #fff;
+    }
+    .box-4 {
+      background-color: #2c6fc7;
+      color: #fff;
+    }
+
+    .order-1 {
+      order: 1;
+    }
+    .order-2 {
+      order: 2;
+    }
+    .order-3 {
+      order: 3;
+    }
+    .order-4 {
+      order: 4;
+    }
+    .flex-1-0 {
+      flex: 1 0;
+    }
+    .flex-1-1 {
+      flex: 1 1;
+    }
+    .flex-0-1 {
+      flex: 0 1;
+    }
+    .flex-1-0-200 {
+      flex: 1 0 200px;
+    }
+    .flex-grow-1 {
+      flex-grow: 1;
+    }
+    .flex-grow-0 {
+      flex-grow: 0;
+    }
+    .flex-shrink-1 {
+      flex-shrink: 1;
+    }
+    .flex-shrink-0 {
+      flex-shrink: 0;
+    }
+    .flex-basis-200 {
+      flex-basis: 300px;
+    }
+    .flex-basis-0 {
+      flex-basis: 0;
+    }
+    .flex-basis-auto {
+      flex-basis: auto;
+    }
+    .flex-start {
+      justify-content: start;
+    }
+    .flex-end {
+      justify-content: end;
+    }
+    .flex-center {
+      justify-content: center;
+    }
+    .flex-space-between {
+      justify-content: space-between;
+    }
+    .flex-space-around {
+      justify-content: space-around;
+    }
+    .flex-align-items-flex-start {
+      align-items: flex-start;
+    }
+    .flex-align-items-flex-end {
+      align-items: flex-end;
+    }
+    .flex-align-items-flex-center {
+      align-items: center;
+    }
+    .flex-align-items-flex-baseline {
+      align-items: baseline;
+    }
+    .flex-align-items-flex-stretch {
+      align-items: stretch;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox Examplos</h1>
+
+  <h2>Segundo o site Alura, o que é o Flexbox?</h2>
+    <p>Por muito tempo, as únicas ferramentas disponíveis para criar leiautes em CSS e posicionar elementos com boa compatibilidade entre browsers eram float e position. Porém, essas ferramentas possuem algumas limitações muito frustrantes, especialmente no que diz respeito à responsividade. Algumas tarefas que consideramos básicas em um leiaute, como centralização vertical de um elemento-filho com relação a um elemento-pai ou fazer com que elementos-filhos ocupem a mesma quantidade de espaço, ou colunas terem o mesmo tamanho independente da quantidade de conteúdo interno, eram impossíveis ou muito difíceis de serem manejadas com floats ou position, ao menos de forma prática e flexível.
+    
+    A ferramenta Flexbox (de Flexible Box) foi criada para tornar essas tarefas mais simples e funcionais: os filhos de um elemento com Flexbox podem se posicionar em qualquer direção e pode ter dimensões flexíveis para se adaptar.</p>
+<p> Quando utilizamos o Flexbox, é muito importante saber quais propriedades são declaradas no elemento-pai (por exemplo, uma div que irá conter os elementos a serem alinhados) e quais serão declaradas nos elementos-filhos. Abaixo, seguem propriedades que devem ser declaradas utilizando o elemento-pai como seletor (para alinhar elementos-filhos):</p>
+  <h2>display: flex</h2>
+
+   <div class="box-container flexbox">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>display: inline-flex</h2>
+
+this is a sentence with an
+ <span class="box-container flexbox-inline">
+    <span class="box-1 box">
+      box 1
+    </span>
+
+    <span class="box-2 box">
+      box 2
+    </span>
+
+    <span class="box-3 box">
+      box 3
+    </span>
+
+    <span class="box-4 box">
+      box 4
+    </span>
+  </span>
+  inline span set to <code>display: inline-flex;</code>.
+
+
+  <h2>flex-direction: row</h2>
+
+  <p>Estabelece o eixo principal, definindo assim a direção em que os flex items são alinhados no flex container. O Flexbox é (com exceção de um wrapping opcional) um conceito de leiaute de uma só direção. Pense nos flex items inicialmente posicionaids ou em linhas horizontais ou em colunas verticais.</p>
+
+  <div class="box-container flexbox flex-direction-row">
+
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>flex-direction: row-reverse</h2>
+
+  <div class="box-container flexbox flex-direction-row-reverse">
+
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+
+  <h2>flex-direction: column</h2>
+
+  <div class="box-container flexbox flex-direction-column">
+
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>flex-direction: column-reverse</h2>
+
+  <div class="box-container flexbox flex-direction-column-reverse">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>flex-wrap: nowrap</h2>
+
+  <div class="box-container flexbox flex-wrap-nowrap">
+    <div class="box-1 box-lg">
+      <h3>box 1</h3>
+      <p>
+        flex-wrap: nowrap; // Valor padrão, não permite a quebra de linha. 
+      </p>
+    </div>
+
+    <div class="box-2 box-lg">
+      <h3>box 2</h3>
+      <p>
+        flex-wrap: nowrap; // Valor padrão, não permite a quebra de linha. 
+      </p>
+    </div>
+
+    <div class="box-3 box-lg">
+      <h3>box 3</h3>
+      <p>
+        flex-wrap: nowrap; // Valor padrão, não permite a quebra de linha. 
+      </p>
+    </div>
+
+    <div class="box-4 box-lg">
+      <h3>box 4</h3>
+      <p>
+        flex-wrap: nowrap; // Valor padrão, não permite a quebra de linha. 
+      </p>
+    </div>
+  </div>
+
+  <h2>flex-wrap: wrap</h2>
+  
+  <p>Por padrão, os flex items vão todos tentar se encaixar em uma só linha. Com esta propriedade você pode modificar esse comportamento e permitir que os ítens quebrem para uma linha seguinte conforme for necessário.</p>
+
+  <div class="box-container flexbox flex-wrap-wrap">
+    <div class="box-1 box-lg">
+      <h3>box 1</h3>
+      <p>
+        flex-wrap: wrap; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-2 box-lg">
+      <h3>box 2</h3>
+      <p>
+        flex-wrap: wrap; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-3 box-lg">
+      <h3>box 3</h3>
+      <p>
+        flex-wrap: wrap; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-4 box-lg">
+      <h3>box 4</h3>
+      <p>
+        flex-wrap: wrap; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+  </div>
+
+    <h2>flex-wrap: wrap-reverse</h2>
+
+  <div class="box-container flexbox flex-wrap-wrap-reverse">
+    <div class="box-1 box-lg">
+      <h3>box 1</h3>
+      <p>
+        wrap-reverse; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-2 box-lg">
+      <h3>box 2</h3>
+      <p>
+        wrap-reverse; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-3 box-lg">
+      <h3>box 3</h3>
+      <p>
+        wrap-reverse; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+
+    <div class="box-4 box-lg">
+      <h3>box 4</h3>
+      <p>
+        wrap-reverse; // Quebra a linha assim que um dos flex itens não puder mais ser compactado.
+      </p>
+    </div>
+  </div>
+
+  <h2>flex-flow: row nowrap</h2>
+  <p>A propriedade flex-flow é uma propriedade shorthand (uma mesma declaração inclui vários valores relacionados a mais de uma propriedade) que inclui flex-direction e flex-wrap. Determina quais serão os eixos pricipal e transversal do container. O valor padrão é row nowrap.</p>
+  <div class="box-container flexbox flex-flow-row-nowrap">
+    <div class="box-1 box-lg">
+      <h3>box 1</h3>
+      <p>
+        flex-flow: row nowrap; // Coloca o conteúdo em linha e não permite a quebra de linha.  
+      </p>
+    </div>
+
+    <div class="box-2 box-lg">
+      <h3>box 2</h3>
+      <p>
+        flex-flow: row nowrap; // Coloca o conteúdo em linha e não permite a quebra de linha. 
+      </p>
+    </div>
+
+    <div class="box-3 box-lg">
+      <h3>box 3</h3>
+      <p>
+        flex-flow: row nowrap; // Coloca o conteúdo em linha e não permite a quebra de linha. 
+      </p>
+    </div>
+
+    <div class="box-4 box-lg">
+      <h3>box 4</h3>
+      <p>
+        flex-flow: row nowrap; // Coloca o conteúdo em linha e não permite a quebra de linha. 
+      </p>
+    </div>
+  </div>
+
+  <h2>flex-flow: column wrap</h2>
+  <div class="box-container fixed-height flexbox flex-flow-column-wrap">
+    <div class="box-1 box-lg">
+      <h3>box 1</h3>
+      <p>
+        flex-flow: column nowrap; // Coloca o conteúdo em coluna e permite a quebra de linha.
+      </p>
+    </div>
+
+    <div class="box-2 box-lg">
+      <h3>box 2</h3>
+      <p>
+        flex-flow: column nowrap; // Coloca o conteúdo em coluna e permite a quebra de linha.
+      </p>
+    </div>
+
+    <div class="box-3 box-lg">
+      <h3>box 3</h3>
+      <p>
+        flex-flow: column nowrap; // Coloca o conteúdo em coluna e permite a quebra de linha.
+      </p>
+    </div>
+
+    <div class="box-4 box-lg">
+      <h3>box 4</h3>
+      <p>
+        flex-flow: column nowrap; // Coloca o conteúdo em coluna e permite a quebra de linha.
+      </p>
+    </div>
+  </div>
+
+  <h2>order:</h2>
+  <div class="box-container flexbox">
+    <div class="box-1 box order-3">
+      box 1
+    </div>
+
+    <div class="box-2 box order-1">
+      box 2
+    </div>
+
+    <div class="box-3 box order-2">
+      box 3
+    </div>
+
+    <div class="box-4 box order-4">
+      box 4
+    </div>
+  </div>
+
+  <h2>flex: </h2>
+  <div class="box-container flexbox">
+    <div class="box-1 box flex-1-0">
+      box 1 <br>
+      <code>flex: 1 0</code>
+    </div>
+
+    <div class="box-2 box flex-1-1">
+      box 2 <br>
+      <code>flex: 1 1</code>
+    </div>
+
+    <div class="box-3 box flex-1-0-200">
+      box 3 <br>
+      <code>flex: 1 0 200px</code>
+    </div>
+
+    <div class="box-4 box flex-0-1">
+      box 4 <br>
+     <code>flex: 0 1</code>
+    </div>
+  </div>
+
+  <h2>flex-grow:</h2>
+  <div class="box-container flexbox">
+    <div class="box-1 box flex-grow-0">
+      box 1 <br>
+      <code>flex-grow: 0</code>
+    </div>
+
+    <div class="box-2 box flex-grow-1">
+      box 2 <br>
+      <code>flex-grow: 1</code>
+    </div>
+
+    <div class="box-3 box flex-grow-0">
+      box 3 <br>
+      <code>flex-grow: 0</code>
+    </div>
+
+    <div class="box-4 box flex-grow-0">
+      box 4 <br>
+     <code>flex-grow: 0</code>
+    </div>
+  </div>
+
+  <h2>flex-shrink: </h2>
+    <div class="box-container flexbox">
+    <div class="box-1 box-lg flex-shrink-1">
+      box 1 <br>
+      <code>flex-shrink: 1</code>
+    </div>
+
+    <div class="box-2 box-lg flex-shrink-1">
+      box 2 <br>
+      <code>flex-shrink: 1</code>
+    </div>
+
+    <div class="box-3 box-lg flex-shrink-0">
+      box 3 <br>
+      <code>flex-shrink: 0</code>
+    </div>
+
+    <div class="box-4 box-lg flex-shrink-1">
+      box 4 <br>
+     <code>flex-shrink: 1</code>
+    </div>
+  </div>
+
+  <h2>flex-basis:</h2>
+  <div class="box-container flexbox">
+    <div class="box-1 box flex-basis-200">
+      box 1 <br>
+      <code>flex-basis: 200px</code>
+    </div>
+
+    <div class="box-2 box flex-basis-0">
+      box 2 <br>
+      <code>flex-basis: 0</code>
+    </div>
+
+    <div class="box-3 box flex-basis-auto">
+      box 3 <br>
+      <code>flex-basis: auto</code>
+    </div>
+
+    <div class="box-4 box flex-basis-auto">
+      box 4 <br>
+     <code>flex-grow: auto</code>
+    </div>
+  </div>
+
+  <h2>justify-content: flex-start</h2>
+  <div class="box-container flexbox flex-start">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>justify-content: flex-end</h2>
+  <div class="box-container flexbox flex-end">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>justify-content: flex-center</h2>
+  <div class="box-container flexbox flex-center">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>justify-content: space-between</h2>
+  <div class="box-container flexbox flex-space-between">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+  <h2>justify-content: space-around</h2>
+  <div class="box-container flexbox flex-space-around">
+    <div class="box-1 box">
+      box 1
+    </div>
+
+    <div class="box-2 box">
+      box 2
+    </div>
+
+    <div class="box-3 box">
+      box 3
+    </div>
+
+    <div class="box-4 box">
+      box 4
+    </div>
+  </div>
+
+
+  <h2>align-items: flex-start</h2>
+  <div class="box-container flexbox fixed-height flex-align-items-flex-start">
+    <div class="box-1 box fixed-box">
+      box 1 <br>
+    </div>
+
+    <div class="box-2 box fixed-box">
+      box 2 <br>
+    </div>
+
+    <div class="box-3 box fixed-box">
+      box 3 <br>
+    </div>
+
+    <div class="box-4 box fixed-box">
+      box 4 <br>
+    </div>
+
+  </div>
+
+  <h2>align-items: flex-end</h2>
+  <div class="box-container flexbox fixed-height flex-align-items-flex-end">
+    <div class="box-1 box fixed-box">
+      box 1 <br>
+    </div>
+
+    <div class="box-2 box fixed-box">
+      box 2 <br>
+    </div>
+
+    <div class="box-3 box fixed-box">
+      box 3 <br>
+    </div>
+
+    <div class="box-4 box fixed-box">
+      box 4 <br>
+    </div>
+
+  </div>
+
+
+  <h2>align-items: flex-center</h2>
+  <div class="box-container flexbox fixed-height flex-align-items-flex-center">
+    <div class="box-1 box fixed-box">
+      box 1 <br>
+    </div>
+
+    <div class="box-2 box fixed-box">
+      box 2 <br>
+    </div>
+
+    <div class="box-3 box fixed-box">
+      box 3 <br>
+    </div>
+
+    <div class="box-4 box fixed-box">
+      box 4 <br>
+    </div>
+
+  </div>
+
+  <h2>align-items: flex-baseline</h2>
+  <div class="box-container flexbox flex-align-items-flex-baseline">
+    <div class="box-1 box" style="height: 60px">
+      box 1 <br>
+    </div>
+
+    <div class="box-2 box" style="height: 10px">
+      box 2 <br>
+    </div>
+
+    <div class="box-3 box" style="height: 100px">
+      box 3 <br>
+    </div>
+
+    <div class="box-4 box" style="height: 70px">
+      box 4 <br>
+    </div>
+
+  </div>
+
+
+  <h2>align-items: flex-stretch</h2>
+  <div class="box-container flexbox fixed-height flex-align-items-flex-stretch">
+    <div class="box-1 box">
+      box 1 <br>
+    </div>
+
+    <div class="box-2 box">
+      box 2 <br>
+    </div>
+
+    <div class="box-3 box">
+      box 3 <br>
+    </div>
+
+    <div class="box-4 box">
+      box 4 <br>
+    </div>
+
+  </div>
+
+
+
+
+</body>
+</html>
